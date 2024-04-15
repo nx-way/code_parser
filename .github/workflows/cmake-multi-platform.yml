@@ -67,7 +67,7 @@ jobs:
     - name: Upload artifacts
       uses: actions/upload-artifact@v2
       with:
-        name: executables
+        name: ${{ matrix.os }}-${{ matrix.c_compiler }}-${{ matrix.cpp_compiler }}-executables
         path: |
           ${{ steps.strings.outputs.build-output-dir }}/bin/*
           # Add more paths if you have additional executables
