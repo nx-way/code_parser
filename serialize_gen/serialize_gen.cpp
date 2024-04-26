@@ -383,6 +383,16 @@ int main(int argc, char **argv) {
 
 
         if (!output.empty()){
+
+            auto it = std::find(input_files.begin(), input_files.end(),output);
+            if (it != input_files.end()){
+
+                std::cout << "\n//==== generated code\n";
+                std::cout <<  code.str() << std::endl;
+                std::cout << "Warning, " << output << " appears in input_files, skip generating!!" << std::endl;
+                return 0;
+            }
+
             // Open the file for writing
             std::ofstream outFile(output.c_str());
 
