@@ -149,12 +149,12 @@ namespace %s
 %s }
 )";
         const char* impl_json_fmt = R"(
-%s void from_json(const nlohmann::json & value,%s& object ){
+%s inline void from_json(const nlohmann::json & value,%s& object ){
 %s
 %s }
 
 
-%s void to_json( nlohmann::json & value,const %s& object ){
+%s inline void to_json( nlohmann::json & value,const %s& object ){
 %s
 %s }
 )";
